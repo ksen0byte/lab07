@@ -2,17 +2,17 @@ package com.ksenobyte;
 
 import com.ksenobyte.structure.MyTree;
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
         MyTree<Integer> tree = new MyTree<>(0);
-        tree.addChild(1);
-        tree.addChild(2);
-        tree.addChild(3);
-        tree.addChild(-2);
-        tree.addChild(-1);
-        tree.addChild(4);
-        System.out.println(tree);
-        tree.replaceValue(1, 2);
-        System.out.println(tree);
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i + 1 + " : iteration");
+            tree.addChild(random.nextInt(10));
+            System.out.println(tree);
+            System.out.println("==================================================");
+        }
     }
 }
